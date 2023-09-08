@@ -67,7 +67,7 @@ class SlippstreamClient():
         if self._host:
             self._host = None
 
-        if self.gamecube and self.server is not None:
+        if self.gamecube and hasattr(self, "server") and self.server is not None:
             self.server.close()
 
         return False
